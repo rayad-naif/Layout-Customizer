@@ -1,0 +1,191 @@
+/* ============================
+   FULL PAGE LAYOUT
+============================ */
+.hl_login {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Inter", "Poppins", sans-serif;
+}
+
+/* LEFT SIDE (Illustration) */
+.hl_login::before {
+  content: "";
+  width: 50%;
+  background:var(--login-background-image) center center / cover no-repeat;
+}
+
+/* RIGHT SIDE (Gradient background) */
+.hl_login--body {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--login-background-active,linear-gradient(135deg, #d6d8ff 0%, #b7afff 100%));
+  padding: 40px;
+  position: relative;
+  z-index: 5;
+}
+
+/* ============================
+   LOGIN CARD (White Box)
+============================ */
+.hl_login--body .card {
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff00 !important;
+  padding: 45px 35px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0);
+  border: none;
+  text-align: center;
+}
+
+/* ============================
+   LOGO INSIDE THE CARD
+============================ */
+.hl_login--body .card::before {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto -25px auto;
+  background-image: var(--login-company-logo);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.hl_login--header{
+    display: none !important;
+}
+/* ============================
+   HEADING
+============================ */
+.login-card-heading h2 {
+  font-size: var(--login-headline-font-size,26px) !important;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color:var(--login-headline-text-color,#000) !important;
+}
+.bg-curious-blue-500{
+    background: var(--login-button-bg-gradient,#00c853) !important;
+    border: none;
+    border-radius: var(--login-button-border-radius,8px) !important;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+/* ============================
+   INPUT FIELDS
+============================ */
+.hl-text-input {
+  width: 100%;
+  padding: 13px 14px;
+  border-radius: 25px !important;
+  border: 1px solid #d1d1d1;
+  background: #eef2ff;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #000;
+}
+
+.hl-text-input:focus {
+  border-color: #6e63ff;
+  box-shadow: 0 0 0 2px rgba(110, 99, 255, 0.25);
+  outline: none;
+}
+
+/* Forgot Password */
+.forgot-password {
+  display: block;
+  text-align: right;
+  font-size: 13px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  color:var(--login-link-text-color,#9e9e9e) !important;
+}
+
+/* ============================
+   BUTTON
+============================ */
+.hl_login--body button[type="submit"] {
+  width: 100%;
+  background:var(--login-button-bg-gradient, #5b4bff )!important;
+  border: none;
+  border-radius: var(--login-button-border-radius,8px) !important;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color:var(--login-button-text-color,#000) !important ;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.hl_login--body button[type="submit"]:hover {
+  background: var(--login-button-hover-bg-color,#4c3aff) !important;
+  transform: translateY(-1px);
+}
+
+/* ============================
+   FOOT NOTE
+============================ */
+/* === LINKS === */
+.forgot-password {
+  display: block;
+  text-align: right;
+  font-size: 13px;
+  color:var(--login-link-text-color,#632ef5) !important;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+.forgot-password:hover {
+  color: #3060ff;
+}
+.foot-note {
+  margin-top: 22px;
+  font-size: 13px;
+  color: #666 !important;
+  text-align: center;
+}
+
+.foot-note a {
+  color: var(--login-link-text-color,#4c3aff) !important;
+  text-decoration: none;
+}
+.foot-note a:hover {
+  text-decoration: underline;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 1024px) {
+  .hl_login {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .hl_login::before {
+    width: 100%;
+    height: 280px;
+  }
+
+  .hl_login--body {
+    width: 100%;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hl_login--body .card {
+    padding: 30px 25px;
+  }
+
+  .login-card-heading h2 {
+    font-size: 22px;
+  }
+}
